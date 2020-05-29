@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TravelGuideME</string>
+    <string name="mainBackground">MainWallpaper</string>
 </resources>
