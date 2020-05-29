@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">TravelGuideME</string>
     <string name="mainBackground">MainWallpaper</string>
+    <string name="mainTitle">Traveller</string>
+    <string name="txt_Select_country">Select Country</string>
+    <string name="txt_fav">Your Favourite</string>
+    <string name="txt_memo">Your Memo</string>
+    <string name="txt_about">About Us</string>
 </resources>

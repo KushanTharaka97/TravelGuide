@@ -15,14 +15,13 @@
         android:src="@drawable/travel" />
 
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
-        android:text="Hello World!"
+        android:text="Traveller"
         android:textColor="@android:color/black"
         android:textSize="40sp"
         android:textStyle="bold" />
@@ -31,47 +30,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:gravity="center"
-        android:orientation="vertical"
         android:marginLeft="8dp"
         android:marginRight="8dp"
-        android:layout_centerVertical="true"
-       >
+        android:orientation="vertical">
 
         <TextView
-            android:text="text1"
+
             style="@style/CategoryStyle"
-            android:textStyle="bold"
             android:background="@color/colorAccent"
-
-           />
+            android:text="text1"
+            android:textStyle="bold" />
 
         <TextView
 
-            android:text="text2"
             style="@style/CategoryStyle"
             android:background="@color/brightYellow"
-            />
+            android:text="text2" />
 
         <TextView
 
-            android:text="text3"
             style="@style/CategoryStyle"
             android:background="@color/lightGreen3"
-
-            />
+            android:text="text3" />
 
         <TextView
 
-            android:text="text4"
-           style="@style/CategoryStyle"
+            style="@style/CategoryStyle"
             android:background="@color/chocalateBrown"
-            />
+            android:text="text4" />
 
 
     </LinearLayout>
-
-
 
 
 </RelativeLayout>
