@@ -10,6 +10,19 @@
 
 
     <!--Title View Style-->
+    <style name="TitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">40dp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">italic|bold</item>
+
+
+    </style>
 
 
     <!-- Style for a category of vocabulary words -->
@@ -22,6 +35,8 @@
        <item name="android:layout_marginBottom">8dp</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 </resources>

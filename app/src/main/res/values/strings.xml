@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">TravelGuideME</string>
     <string name="mainBackground">MainWallpaper</string>
+    <!--Text views-->
     <string name="mainTitle">Traveller</string>
+    <string name="selectCountry">Select Country</string>
+    <string name="fav">Your Favourite</string>
+    <string name="memo">Your Memo</string>
+    <string name="about">About Us</string>
+
+
+    <!--Buttons in the mainXML window-->
     <string name="txt_Select_country">Select Country</string>
     <string name="txt_fav">Your Favourite</string>
     <string name="txt_memo">Your Memo</string>

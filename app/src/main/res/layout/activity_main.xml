@@ -16,15 +16,9 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
-        android:text="Traveller"
-        android:textColor="@android:color/black"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        style="@style/TitleStyle"
+        android:text="@string/mainTitle"
+        />
 
 
     <LinearLayout
