@@ -42,27 +42,30 @@
             android:text="text1"
             style="@style/CategoryStyle"
             android:textStyle="bold"
+            android:background="@color/colorAccent"
 
            />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:text="text2"
-            android:layout_marginBottom="16dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="text3"
-            android:layout_marginBottom="16dp"
+            style="@style/CategoryStyle"
+            android:background="@color/brightYellow"
             />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
+            android:text="text3"
+            style="@style/CategoryStyle"
+            android:background="@color/lightGreen3"
+
+            />
+
+        <TextView
+
             android:text="text4"
-            android:layout_marginBottom="16dp"
+           style="@style/CategoryStyle"
+            android:background="@color/chocalateBrown"
             />
 
 
