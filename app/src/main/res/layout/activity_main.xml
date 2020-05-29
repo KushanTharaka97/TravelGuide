@@ -34,26 +34,26 @@
 
             style="@style/CategoryStyle"
             android:background="@color/colorAccent"
-            android:text="text1"
+            android:text="@string/selectCountry"
             android:textStyle="bold" />
 
         <TextView
 
             style="@style/CategoryStyle"
             android:background="@color/brightYellow"
-            android:text="text2" />
+            android:text="@string/fav" />
 
         <TextView
 
             style="@style/CategoryStyle"
             android:background="@color/lightGreen3"
-            android:text="text3" />
+            android:text="@string/memo" />
 
         <TextView
 
             style="@style/CategoryStyle"
             android:background="@color/chocalateBrown"
-            android:text="text4" />
+            android:text="@string/about" />
 
 
     </LinearLayout>
