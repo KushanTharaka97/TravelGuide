@@ -16,7 +16,8 @@
 
     <TextView
         style="@style/TitleStyle"
-        android:text="@string/mainTitle" />
+        android:text="@string/mainTitle"
+        />
 
 
     <LinearLayout
@@ -32,25 +33,29 @@
             style="@style/CategoryStyle"
             android:background="@color/colorAccent"
             android:text="@string/selectCountry"
+            android:id="@+id/selectCountry"
             android:textStyle="bold" />
 
         <TextView
 
             style="@style/CategoryStyle"
             android:background="@color/brightYellow"
-            android:text="@string/fav" />
+            android:text="@string/fav"
+            android:id="@+id/yourFavourite"/>
 
         <TextView
 
             style="@style/CategoryStyle"
             android:background="@color/lightGreen3"
-            android:text="@string/memo" />
+            android:text="@string/memo"
+            android:id="@+id/yourMemo"/>
 
         <TextView
 
             style="@style/CategoryStyle"
             android:background="@color/chocalateBrown"
-            android:text="@string/about" />
+            android:text="@string/about"
+            android:id="@+id/aboutUs"/>
 
 
     </LinearLayout>
