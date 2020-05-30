@@ -12,6 +12,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView selectCountry = (TextView) findViewById(R.id.)
+        TextView selectCountry = (TextView) findViewById(R.id.selectCountry);
+
+        TextView yourFovourite = (TextView) findViewById(R.id.yourFavourite);
+
+        TextView yourMemo = (TextView) findViewById(R.id.yourMemo);
+
+        TextView aboutUs = (TextView) findViewById(R.id.aboutUs);
     }
 }
