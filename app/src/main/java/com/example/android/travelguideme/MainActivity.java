@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //make a simple toast message to show
-                Toast.makeText(MainActivity.this, "Select Country", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Open Select Country", Toast.LENGTH_SHORT).show();
 
                 //creating intent to transfering
                 Intent intent = new Intent(MainActivity.this, SelectCountry.class);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Toast
-                Toast.makeText(MainActivity.this, "Your Favourites", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Open Your Favourites", Toast.LENGTH_SHORT).show();
 
                 //Intent
                 Intent intent = new Intent(MainActivity.this, YourFav.class);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Toast
-                Toast.makeText(MainActivity.this, "Your Memo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Open Your Memo", Toast.LENGTH_SHORT).show();
 
                 //Intent
                 Intent intent = new Intent(MainActivity.this, YourMemo.class);
