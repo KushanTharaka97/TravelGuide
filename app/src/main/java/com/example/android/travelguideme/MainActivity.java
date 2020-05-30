@@ -20,19 +20,57 @@ public class MainActivity extends AppCompatActivity {
         selectCountry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    //make a simple toast message to show
-                Toast.makeText(MainActivity.this,"Slect Country" ,Toast.LENGTH_SHORT).show();
+                //make a simple toast message to show
+                Toast.makeText(MainActivity.this, "Select Country", Toast.LENGTH_SHORT).show();
 
                 //creating intent to transfering
-                Intent intent = new Intent(MainActivity.this , SelectCountry.class);
+                Intent intent = new Intent(MainActivity.this, SelectCountry.class);
                 startActivity(intent);
             }
         });
 
         TextView yourFovourite = (TextView) findViewById(R.id.yourFavourite);
+        //making object in OnClickListner class
+        yourFovourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast
+                Toast.makeText(MainActivity.this, "Your Favourites", Toast.LENGTH_SHORT).show();
+
+                //Intent
+                Intent intent = new Intent(MainActivity.this, YourFav.class);
+                startActivity(intent);
+            }
+        });
 
         TextView yourMemo = (TextView) findViewById(R.id.yourMemo);
+        //making onClickListner
+        yourMemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast
+                Toast.makeText(MainActivity.this, "Your Memo", Toast.LENGTH_SHORT).show();
+
+                //Intent
+                Intent intent = new Intent(MainActivity.this, YourMemo.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         TextView aboutUs = (TextView) findViewById(R.id.aboutUs);
+        //make event listner
+        aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast
+                Toast.makeText(MainActivity.this, "Open About Us", Toast.LENGTH_SHORT).show();
+
+                //Intent
+                Intent intent = new Intent(MainActivity.this, AboutUs.class);
+                startActivity(intent);
+            }
+        });
     }
 }
