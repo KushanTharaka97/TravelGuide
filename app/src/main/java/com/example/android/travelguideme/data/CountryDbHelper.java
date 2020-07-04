@@ -19,7 +19,17 @@ public class CountryDbHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         //creating database
-        String SQL_CREATE_COUNTRY_TABLE = "CREATE TABLE"+ InsertCountryData.TABLE_NAME;
+        String SQL_CREATE_COUNTRY_TABLE = "CREATE TABLE "+ InsertCountryData.TABLE_NAME+ " ("
+                + InsertCountryData.COLUMN_COUNTRY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + InsertCountryData.COLUMN_COUNTRY_NAME + " TEXT NOT NULL, "
+                + InsertCountryData.COLUMN_COUNTRY_CURRENCY + " TEXT DEFAULT  Null , "
+                + InsertCountryData.COLUMN_COUNTRY_LANGUAGE + " TEXT DEFAULT Null , "
+                + InsertCountryData.COLUMN_COUNTRY_POPULATION + " INTEGER DEFAULT 0 , "
+                + InsertCountryData.COLUMN_COUNTRY_CAPITAL + " TEXT DEFAULT Null , "
+                + InsertCountryData.COLUMN_COUNTRY_CITIES + " TEXT DEFAULT Null );";
+
+        // Execute the SQL statement
+        db.execSQL(SQL_CREATE_COUNTRY_TABLE);
 
     }
 
