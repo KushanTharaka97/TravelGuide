@@ -1,8 +1,11 @@
 package com.example.android.travelguideme.data;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.ContactsContract;
+
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 import androidx.annotation.Nullable;
 
@@ -10,6 +13,7 @@ public class CountryDbHelper extends SQLiteOpenHelper{
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "guide.db";
+    private CountryDbHelper cDbHelper;
 
 
     public CountryDbHelper(Context context) {
@@ -36,5 +40,27 @@ public class CountryDbHelper extends SQLiteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+
+    //insert data function
+    private void insertData(Context context){
+       SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(InsertCountryData.COLUMN_COUNTRY_NAME, "Name 1");
+        values.put(InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Language");
+        values.put(InsertCountryData.COLUMN_COUNTRY_POPULATION, 55555);
+        values.put(InsertCountryData.COLUMN_COUNTRY_CURRENCY, "type name");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CAPITAL, "capital");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CITIES, "more cities");
+
+        //Inserting row
+        db.insert(InsertCountryData.TABLE_NAME, null, values);
+        //we used null because it is a new row
+
+
+        //connection close
+        db.close();
     }
 }
