@@ -14,4 +14,14 @@
     <string name="txt_fav">Your Favourite</string>
     <string name="txt_memo">Your Memo</string>
     <string name="txt_about">About Us</string>
+
+    <string name="about_content">
+        This mobile "Travel Guide Me" project developed for Mobile Application project
+        Fully native framework has used to create these.
+        Sustainable for upper version thatn 6.0 Android.
+    </string>
+
+    <string name="about_developers">
+        This app was developed by undergraduates in NSBM green university.
+    </string>
 </resources>
