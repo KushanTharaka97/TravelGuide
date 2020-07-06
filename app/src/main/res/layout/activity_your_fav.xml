@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/mainBackground"
         android:scaleType="centerCrop"
-        android:src="@drawable/travelInsideBackground" />
+        android:src="@drawable/bimage" />
     <TextView
         style="@style/TitleStyle"
         android:text="@string/txt_fav"
