@@ -4,10 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.ContactsContract;
+import android.util.Log;
 
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
-import androidx.annotation.Nullable;
 
 public class CountryDbHelper extends SQLiteOpenHelper{
 
@@ -56,8 +55,11 @@ public class CountryDbHelper extends SQLiteOpenHelper{
         values.put(InsertCountryData.COLUMN_COUNTRY_CITIES, "more cities");
 
         //Inserting row
-        db.insert(InsertCountryData.TABLE_NAME, null, values);
+        Long rowId = db.insert(InsertCountryData.TABLE_NAME, null, values);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ InsertCountryData.COLUMN_COUNTRY_ID);
         //we used null because it is a new row
+
+            //Toast.makeText(this, "Error inserting :", Toast.LENGTH_LONG).show();
 
 
         //connection close
