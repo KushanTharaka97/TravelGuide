@@ -31,29 +31,27 @@
 
             android:id="@+id/selectCountry"
             style="@style/CategoryStyle"
-            android:background="@color/colorAccent"
+            android:background="@drawable/rounded_corner"
             android:text="@string/selectCountry"
             android:textStyle="bold" />
 
         <TextView
-
             android:id="@+id/yourFavourite"
             style="@style/CategoryStyle"
-            android:background="@color/brightYellow"
+            android:background="@drawable/rounded_corner_button_yello_muted"
             android:text="@string/fav" />
 
         <TextView
-
             android:id="@+id/yourMemo"
             style="@style/CategoryStyle"
-            android:background="@color/lightGreen3"
+            android:background="@drawable/rounded_corner_button_green_muted"
             android:text="@string/memo" />
 
         <TextView
 
             android:id="@+id/aboutUs"
             style="@style/CategoryStyle"
-            android:background="@color/chocalateBrown"
+            android:background="@drawable/rounded_button_chocalte_brown"
             android:text="@string/about" />
 
 
