@@ -29,6 +29,12 @@
             style="@style/CategoryStyle"
             android:text="@string/about_content"
            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/category_about_us"
+            android:text="@string/about_developers"
+            />
 
     </LinearLayout>
 
