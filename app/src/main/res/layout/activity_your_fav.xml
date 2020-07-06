@@ -28,7 +28,7 @@
         android:layout_alignParentRight="true"
         android:layout_margin = "@dimen/fab_margin"
         android:src="@drawable/home_icon_02"
-        app:fabSize="mini"
+        app:fabSize="@dimen/fab_size"
         app:borderWidth="10dp"
         />
 
