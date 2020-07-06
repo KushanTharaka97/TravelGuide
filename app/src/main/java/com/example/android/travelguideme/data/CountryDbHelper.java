@@ -43,7 +43,6 @@ public class CountryDbHelper extends SQLiteOpenHelper{
                     + "," + InsertCountryData.COLUMN_COUNTRY_CURRENCY + ","
                     + InsertCountryData.COLUMN_COUNTRY_POPULATION + ","
                     + InsertCountryData.COLUMN_COUNTRY_LANGUAGE + ","
-                    +InsertCountryData.COLUMN_COUNTRY_CAPITAL + ","
                     + InsertCountryData.COLUMN_COUNTRY_CAPITAL + ","
                     + InsertCountryData.COLUMN_COUNTRY_CITIES
                     + ") VALUES('New Zealand', 'AusDoller' , '1.5 Million','English','CapitalZealand','City one | city two | city three' )";
