@@ -36,6 +36,21 @@ public class CountryDbHelper extends SQLiteOpenHelper{
 
             // Execute the SQL statement
             db.execSQL(SQL_CREATE_COUNTRY_TABLE);
+
+            //inserting new data about countries
+            String inserting_sql = "INSERT OR REPLACE INTO "+ InsertCountryData.TABLE_NAME
+                    + "(" + InsertCountryData.COLUMN_COUNTRY_NAME
+                    + "," + InsertCountryData.COLUMN_COUNTRY_CURRENCY + ","
+                    + InsertCountryData.COLUMN_COUNTRY_POPULATION + ","
+                    + InsertCountryData.COLUMN_COUNTRY_LANGUAGE + ","
+                    +InsertCountryData.COLUMN_COUNTRY_CAPITAL + ","
+                    + InsertCountryData.COLUMN_COUNTRY_CAPITAL + ","
+                    + InsertCountryData.COLUMN_COUNTRY_CITIES
+                    + ") VALUES('New Zealand', 'AusDoller' , '1.5 Million','English','CapitalZealand','City one | city two | city three' )";
+
+            //executing sql
+            db.execSQL(inserting_sql);
+
         }catch (SQLException e){
             Log.i("Error Database","SQL Error has occured  ::" + e);
         }catch (ExceptionInInitializerError e){
