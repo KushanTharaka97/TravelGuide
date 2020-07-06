@@ -51,11 +51,11 @@ public class CountryDbHelper extends SQLiteOpenHelper{
             db.execSQL(inserting_sql);
 
         }catch (SQLException e){
-            Log.i("Error Database","SQL Error has occured  ::" + e);
+            Log.e("Error Database","SQL Error has occured  ::" + e);
         }catch (ExceptionInInitializerError e){
-            Log.i("Error Database","ExceptionInInitializerError  ::" + e);
+            Log.e("Error Database","ExceptionInInitializerError  ::" + e);
         }catch (Exception e){
-            Log.i("Error Occured","Error Occured in CountryDBHelper is :"+e);
+            Log.e("Error Occured","Error Occured in CountryDBHelper is :"+e);
         }
 
 

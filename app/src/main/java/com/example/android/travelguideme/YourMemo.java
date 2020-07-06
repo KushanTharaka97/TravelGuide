@@ -33,7 +33,7 @@ public class YourMemo extends AppCompatActivity {
             }
         });
     mDbHelper = new CountryDbHelper(this);
-
+        displayDatabaseInfo();
 
     }
 
