@@ -20,6 +20,11 @@
         android:text="@string/txt_memo"
         android:textColor="@color/brightYellow"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewTest"/>
+
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
