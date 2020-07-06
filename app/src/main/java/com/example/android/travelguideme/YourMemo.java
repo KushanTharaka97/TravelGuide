@@ -49,7 +49,7 @@ public class YourMemo extends AppCompatActivity {
             // Display the number of rows in the Cursor (which reflects the number of rows in the
             // pets table in the database).
             TextView displayView = (TextView) findViewById(R.id.viewTest);
-            displayView.setText("Number of rows: " + cursor.getCount());
+            displayView.setText("Number of rows : " + cursor.getCount());
         } finally {
             // Always close the cursor when you're done reading from it. This releases all its
             // resources and makes it invalid.

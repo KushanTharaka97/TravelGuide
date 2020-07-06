@@ -53,6 +53,5 @@
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="fab_size">normal</dimen>
+
 </resources>
