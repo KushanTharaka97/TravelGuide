@@ -2,9 +2,11 @@ package com.example.android.travelguideme.data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 
@@ -21,18 +23,27 @@ public class CountryDbHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //creating database
-        String SQL_CREATE_COUNTRY_TABLE = "CREATE TABLE "+ InsertCountryData.TABLE_NAME+ " ("
-                + InsertCountryData.COLUMN_COUNTRY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + InsertCountryData.COLUMN_COUNTRY_NAME + " TEXT NOT NULL, "
-                + InsertCountryData.COLUMN_COUNTRY_CURRENCY + " TEXT DEFAULT  Null , "
-                + InsertCountryData.COLUMN_COUNTRY_LANGUAGE + " TEXT DEFAULT Null , "
-                + InsertCountryData.COLUMN_COUNTRY_POPULATION + " INTEGER DEFAULT 0 , "
-                + InsertCountryData.COLUMN_COUNTRY_CAPITAL + " TEXT DEFAULT Null , "
-                + InsertCountryData.COLUMN_COUNTRY_CITIES + " TEXT DEFAULT Null );";
+        try{
+            //creating database
+            String SQL_CREATE_COUNTRY_TABLE = "CREATE TABLE "+ InsertCountryData.TABLE_NAME+ " ("
+                    + InsertCountryData.COLUMN_COUNTRY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + InsertCountryData.COLUMN_COUNTRY_NAME + " TEXT NOT NULL, "
+                    + InsertCountryData.COLUMN_COUNTRY_CURRENCY + " TEXT DEFAULT  Null , "
+                    + InsertCountryData.COLUMN_COUNTRY_LANGUAGE + " TEXT DEFAULT Null , "
+                    + InsertCountryData.COLUMN_COUNTRY_POPULATION + " INTEGER DEFAULT 0 , "
+                    + InsertCountryData.COLUMN_COUNTRY_CAPITAL + " TEXT DEFAULT Null , "
+                    + InsertCountryData.COLUMN_COUNTRY_CITIES + " TEXT DEFAULT Null );";
 
-        // Execute the SQL statement
-        db.execSQL(SQL_CREATE_COUNTRY_TABLE);
+            // Execute the SQL statement
+            db.execSQL(SQL_CREATE_COUNTRY_TABLE);
+        }catch (SQLException e){
+            Log.i("Error Database","SQL Error has occured  ::" + e);
+        }catch (ExceptionInInitializerError e){
+            Log.i("Error Database","ExceptionInInitializerError  ::" + e);
+        }catch (Exception e){
+            Log.i("Error Occured","Error Occured in CountryDBHelper is :"+e);
+        }
+
 
     }
 
