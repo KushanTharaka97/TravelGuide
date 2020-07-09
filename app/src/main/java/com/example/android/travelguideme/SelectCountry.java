@@ -1,7 +1,10 @@
 package com.example.android.travelguideme;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -20,6 +23,7 @@ public class SelectCountry extends AppCompatActivity {
     }
 
     //method implementing for display all the countries in this window
+
     private void displayDatabaseInfo(){
         // To access our database, we instantiate our subclass of SQLiteOpenHelper
         // and pass the context, which is the current activity.
@@ -37,6 +41,16 @@ public class SelectCountry extends AppCompatActivity {
                 InsertCountryData.COLUMN_COUNTRY_CITY_01,
                 InsertCountryData.COLUMN_COUNTRY_CITY_02
         };
+
+        //Creating a cursor for show content one by one
+        Cursor cursor = getContentResolver().query(
+                InsertCountryData.CONTENT_URI,
+                projection,
+                null,
+                null,
+                null
+        );
+
 
     }
 }
