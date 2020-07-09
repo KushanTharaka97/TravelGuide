@@ -127,7 +127,7 @@ public class YourMemo extends AppCompatActivity {
 
         Long rowId04 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values04);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
-         */
+
 
         ContentValues values05 = new ContentValues();
         values05.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Australia");
@@ -169,6 +169,37 @@ public class YourMemo extends AppCompatActivity {
         values07.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Perth ");
 
         Long rowId07 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values07);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
+         */
+
+
+        ContentValues values08 = new ContentValues();
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Thailand");
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Central Thai");
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_POPULATION, 69);
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Thai baht");
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Bangkok");
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Nonthaburi");
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Pak Kret");
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Hat Yai");
+        values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Nakhon Ratchasima");
+
+        Long rowId08 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values08);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
+        ContentValues values09 = new ContentValues();
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Japan");
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Hachijo Japanese");
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_POPULATION, 126);
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Japanese yen");
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Tokyo");
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Nagoya");
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Okazaki");
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Kasugai");
+        values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Tsushima");
+
+        Long rowId09 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values09);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
 
     }
