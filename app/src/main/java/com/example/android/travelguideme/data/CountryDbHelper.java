@@ -12,7 +12,7 @@ import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 
 public class CountryDbHelper extends SQLiteOpenHelper{
 
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "guide.db";
     private CountryDbHelper cDbHelper;
 
@@ -32,7 +32,10 @@ public class CountryDbHelper extends SQLiteOpenHelper{
                     + InsertCountryData.COLUMN_COUNTRY_LANGUAGE + " TEXT DEFAULT Null , "
                     + InsertCountryData.COLUMN_COUNTRY_POPULATION + " INTEGER DEFAULT 0 , "
                     + InsertCountryData.COLUMN_COUNTRY_CAPITAL + " TEXT DEFAULT Null , "
-                    + InsertCountryData.COLUMN_COUNTRY_CITIES + " TEXT DEFAULT Null );";
+                    + InsertCountryData.COLUMN_COUNTRY_CITY_01 + " TEXT DEFAULT Null , "
+                    + InsertCountryData.COLUMN_COUNTRY_CITY_02 + " TEXT DEFAULT Null , "
+                    + InsertCountryData.COLUMN_COUNTRY_CITY_03 + " TEXT DEFAULT Null , "
+                    + InsertCountryData.COLUMN_COUNTRY_CITY_04 + " TEXT DEFAULT Null );";
 
             // Execute the SQL statement
             db.execSQL(SQL_CREATE_COUNTRY_TABLE);
@@ -44,7 +47,7 @@ public class CountryDbHelper extends SQLiteOpenHelper{
                     + InsertCountryData.COLUMN_COUNTRY_POPULATION + ","
                     + InsertCountryData.COLUMN_COUNTRY_LANGUAGE + ","
                     + InsertCountryData.COLUMN_COUNTRY_CAPITAL + ","
-                    + InsertCountryData.COLUMN_COUNTRY_CITIES
+                    + InsertCountryData.COLUMN_COUNTRY_CITY_01
                     + ") VALUES('New Zealand', 'AusDoller' , '1.5 Million','English','CapitalZealand','City one | city two | city three' )";
 
             //executing sql
