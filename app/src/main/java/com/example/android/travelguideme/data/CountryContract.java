@@ -1,5 +1,6 @@
 package com.example.android.travelguideme.data;
 
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 public class CountryContract  {
@@ -25,6 +26,23 @@ public class CountryContract  {
         public static final String COLUMN_COUNTRY_CITY_04 = "city04";
 
         public static final String COLUMN_COUNTRY_POPULATION = "population";
+
+        /*
+    Lastly, inside each of the Entry classes in the contract,
+    we create a full URI for the class as a constant called CONTENT_URI.
+     The Uri.withAppendedPath() method appends the BASE_CONTENT_URI
+    (which contains the scheme and the content authority) to the path segment.
+     */
+
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI,PATH_COUNTRIES);
     }
+
+    //Content Authority
+    public static final String CONTENT_AUTHORITY = "com.example.android.travelguideme";
+
+    //To make this a usable URI, we use the parse method which takes in a URI string and returns a Uri.
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+
+    public static final String PATH_COUNTRIES = InsertCountryData.TABLE_NAME;
 
 }
