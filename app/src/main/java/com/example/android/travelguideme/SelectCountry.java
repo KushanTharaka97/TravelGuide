@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
@@ -13,6 +14,9 @@ import com.example.android.travelguideme.data.CountryDbHelper;
 
 public class SelectCountry extends AppCompatActivity {
     private CountryDbHelper mDbHelper;
+
+    /** Tag for the log messages */
+    public static final String LOG_TAG = SelectCountry.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,16 @@ public class SelectCountry extends AppCompatActivity {
                 null,
                 null
         );
+
+        try{
+            //count of the table rows
+            displayView.setText("Number of rows in pets database table: " + cursor.getCount());
+
+        }catch(Exception e){
+            Log.e(LOG_TAG,"Error Occured due to "+ e);
+        }finally {
+            cursor.close();
+        }
 
 
     }

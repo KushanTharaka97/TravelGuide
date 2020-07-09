@@ -35,8 +35,10 @@ public class YourMemo extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(YourMemo.this, MainActivity.class);
                 startActivity(intent);
-                insertData();
-                finish();
+                //I have used insertData method to insert data to my table
+                //I kept this for proving my works that I have really done this
+                //insertData();
+                //finish();
             }
         });
     mDbHelper = new CountryDbHelper(this);
@@ -171,7 +173,7 @@ public class YourMemo extends AppCompatActivity {
         Long rowId07 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values07);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
 
-         */
+
 
 
         ContentValues values08 = new ContentValues();
@@ -201,6 +203,8 @@ public class YourMemo extends AppCompatActivity {
 
         Long rowId09 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values09);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
+         */
 
     }
 }
