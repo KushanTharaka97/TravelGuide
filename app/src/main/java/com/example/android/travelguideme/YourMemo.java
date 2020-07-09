@@ -35,7 +35,7 @@ public class YourMemo extends AppCompatActivity {
             }
         });
     mDbHelper = new CountryDbHelper(this);
-        //insertObject.insertData();
+        insertObject.insertData();
         displayDatabaseInfo();
 
 
