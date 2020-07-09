@@ -68,7 +68,7 @@ public class CountryDbHelper extends SQLiteOpenHelper{
 
 
     //insert data function
-    private void insertData(Context context){
+   /* private void insertDataTest(Context context){
        SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
@@ -78,6 +78,30 @@ public class CountryDbHelper extends SQLiteOpenHelper{
         values.put(InsertCountryData.COLUMN_COUNTRY_CURRENCY, "type name");
         values.put(InsertCountryData.COLUMN_COUNTRY_CAPITAL, "capital");
         values.put(InsertCountryData.COLUMN_COUNTRY_CITIES, "more cities");
+
+        ContentValues values01 = new ContentValues();
+        values.put(InsertCountryData.COLUMN_COUNTRY_NAME, "France");
+        values.put(InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "French");
+        values.put(InsertCountryData.COLUMN_COUNTRY_POPULATION, 67);
+        values.put(InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Euro");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Paris");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CITIES, "Marseille,Lyon,Toulouse,Strasobourg,Bordeaux");
+
+        ContentValues values02 = new ContentValues();
+        values.put(InsertCountryData.COLUMN_COUNTRY_NAME, "Spain");
+        values.put(InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Spanish");
+        values.put(InsertCountryData.COLUMN_COUNTRY_POPULATION, 47);
+        values.put(InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Euro");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Madrid");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CITIES, "Barcelona,Seville, Granada,Valencia,Bilbao");
+
+        ContentValues values03 = new ContentValues();
+        values.put(InsertCountryData.COLUMN_COUNTRY_NAME, "China");
+        values.put(InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Chinese");
+        values.put(InsertCountryData.COLUMN_COUNTRY_POPULATION, 1430);
+        values.put(InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Yuan");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Beijing");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CITIES, "Hangzhou,Gullin,Chengdu,Guangzhou");
 
         //Inserting row
         Long rowId = db.insert(InsertCountryData.TABLE_NAME, null, values);
@@ -89,5 +113,5 @@ public class CountryDbHelper extends SQLiteOpenHelper{
 
         //connection close
         db.close();
-    }
+    }*/
 }
