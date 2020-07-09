@@ -54,6 +54,24 @@ public class CountryProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
+        //created object to read the db by uri
+        SQLiteDatabase database = mCountryHelperObject.getReadableDatabase();
+
+        Cursor cursor;
+        //match the transerd uri from below method
+        int match = sUriMatcher.match(uri);
+        switch (match){
+            //if uri match with COUNTRIES 100
+            case COUNTRIES:
+                cursor = database.query(InsertCountryData.TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
+                break;
+
+                //if uri match with the certain id
+            case COUNTRY_ID:
+                selection = InsertCountryData.COLUMN_COUNTRY_ID+"=?";
+                selectionArgs = new String[] {String.valueOf(ContentUris.parseId(uri))};
+        }
+
         return null;
     }
 
