@@ -10,7 +10,7 @@ public class CountryData {
     CountryDbHelper mDbHelper;
 
     //insert data function
-    private void insertData(){
+    public void insertData(){
 
         //make connection with the SQLite database
         SQLiteDatabase db = mDbHelper.getWritableDatabase();

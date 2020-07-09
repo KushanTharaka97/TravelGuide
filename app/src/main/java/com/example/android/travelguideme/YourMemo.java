@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.android.travelguideme.data.CountryContract;
+import com.example.android.travelguideme.data.CountryData;
 import com.example.android.travelguideme.data.CountryDbHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
@@ -17,6 +18,7 @@ import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 public class YourMemo extends AppCompatActivity {
 
     private CountryDbHelper mDbHelper;
+    CountryData insertObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,9 @@ public class YourMemo extends AppCompatActivity {
             }
         });
     mDbHelper = new CountryDbHelper(this);
+        //insertObject.insertData();
         displayDatabaseInfo();
+
 
     }
 
