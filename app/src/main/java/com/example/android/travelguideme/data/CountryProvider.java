@@ -1,10 +1,15 @@
 package com.example.android.travelguideme.data;
 
 import android.content.ContentProvider;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.util.Log;
+
+import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,11 +40,15 @@ public class CountryProvider extends ContentProvider {
         sUriMatcher.addURI(CountryContract.CONTENT_AUTHORITY, CountryContract.PATH_COUNTRIES, COUNTRIES);
         sUriMatcher.addURI(CountryContract.CONTENT_AUTHORITY,CountryContract.PATH_COUNTRIES+ "/#" ,COUNTRY_ID);
     }
-
+    private CountryDbHelper mCountryHelperObject;
 
     @Override
     public boolean onCreate() {
-        return false;
+
+        // Make sure the variable is a global variable, so it can be referenced from other
+        // ContentProvider methods.
+        mCountryHelperObject = new CountryDbHelper(getContext());
+        return true;
     }
 
     @Nullable
@@ -54,11 +63,31 @@ public class CountryProvider extends ContentProvider {
         return null;
     }
 
-    @Nullable
+
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
-        return null;
+        final int match = sUriMatcher.match(uri);
+        switch(match){
+            case COUNTRIES:
+                return insertCountries(uri, values);
+            default:
+                throw new IllegalArgumentException("Insertion Not Suppor for "+ uri);
+         }
     }
+
+    private Uri insertCountries(Uri uri, ContentValues values){
+        SQLiteDatabase databaseForInsertion = mCountryHelperObject.getWritableDatabase();
+
+        // Defines an object to contain the new values to insert
+        long id = databaseForInsertion.insert(InsertCountryData.TABLE_NAME,null,values);
+        if(id == -1){
+            Log.e(LOG_TAG,"Failed to insert "+ uri);
+            return null;
+        }
+        return ContentUris.withAppendedId(uri, id);
+
+    }
+
 
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
