@@ -3,17 +3,33 @@ package com.example.android.travelguideme.data;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.util.Log;
+import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 
 public class CountryData {
     //create olect from DBHelper class
     CountryDbHelper mDbHelper;
+    SQLiteDatabase db;
 
     //insert data function
     public void insertData(){
+        String[] projection = {
+                InsertCountryData.COLUMN_COUNTRY_NAME,
+                InsertCountryData.COLUMN_COUNTRY_LANGUAGE,
+                InsertCountryData.COLUMN_COUNTRY_POPULATION,
+                InsertCountryData.COLUMN_COUNTRY_CURRENCY,
+                InsertCountryData.COLUMN_COUNTRY_CAPITAL,
+                InsertCountryData.COLUMN_COUNTRY_CITY_01,
+                InsertCountryData.COLUMN_COUNTRY_CITY_02,
+                InsertCountryData.COLUMN_COUNTRY_CITY_03
+
+        };
+
+
 
         //make connection with the SQLite database
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+         db= mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Name 1");
@@ -23,9 +39,13 @@ public class CountryData {
         values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "capital");
         values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "more cities");
 
+        /*
         Long rowId = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+        */
 
+         //Uri newUri =
+/*
         ContentValues values01 = new ContentValues();
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "France");
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "French");
@@ -162,7 +182,7 @@ public class CountryData {
 
         //Toast.makeText(this, "Error inserting :", Toast.LENGTH_LONG).show();
 
-
+*/
         //connection close
         db.close();
     }

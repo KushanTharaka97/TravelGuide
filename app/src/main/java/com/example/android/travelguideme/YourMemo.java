@@ -32,12 +32,12 @@ public class YourMemo extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(YourMemo.this, MainActivity.class);
                 startActivity(intent);
+                insertObject.insertData();
             }
         });
     mDbHelper = new CountryDbHelper(this);
-        insertObject.insertData();
-        displayDatabaseInfo();
 
+        displayDatabaseInfo();
 
     }
 
