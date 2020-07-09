@@ -67,7 +67,7 @@ public class YourMemo extends AppCompatActivity {
     private void insertData(){
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
+        /*
         ContentValues values01 = new ContentValues();
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "France");
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "French");
@@ -81,6 +81,53 @@ public class YourMemo extends AppCompatActivity {
 
         Long rowId01 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values01);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
+         */
+
+        ContentValues values02 = new ContentValues();
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Spain");
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Spanish");
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_POPULATION, 47);
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Euro");
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Madrid");
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Barcelona");
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_02, "Seville");
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Granada");
+        values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Valencia");
+
+        Long rowId02 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values02);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
+
+        ContentValues values03 = new ContentValues();
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "China");
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Chinese");
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_POPULATION, 1430);
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Yuan");
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Beijing");
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Hangzhou");
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_02, "Gullin");
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Chengdu");
+        values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Guangzhou");
+
+        Long rowId03 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values03);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
+
+        ContentValues values04 = new ContentValues();
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Italy");
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Italian");
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_POPULATION, 60);
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Euro");
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Rome");
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Venice");
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_02, "Florence");
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Milan");
+        values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Naples");
+
+        Long rowId04 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values04);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
 
     }
 }
