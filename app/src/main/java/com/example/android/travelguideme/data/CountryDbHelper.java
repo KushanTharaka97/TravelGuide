@@ -41,6 +41,7 @@ public class CountryDbHelper extends SQLiteOpenHelper{
             // Execute the SQL statement
             db.execSQL(SQL_CREATE_COUNTRY_TABLE);
 
+            /*
             //inserting new data about countries
             String inserting_sql = "INSERT OR REPLACE INTO "+ InsertCountryData.TABLE_NAME
                     + "(" + InsertCountryData.COLUMN_COUNTRY_NAME
@@ -53,7 +54,7 @@ public class CountryDbHelper extends SQLiteOpenHelper{
 
             //executing sql
             db.execSQL(inserting_sql);
-
+            */
         }catch (SQLException e){
             Log.e("Error Database","SQL Error has occured  ::" + e);
         }catch (ExceptionInInitializerError e){
@@ -68,6 +69,10 @@ public class CountryDbHelper extends SQLiteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        //DELETE ENTRIES
+        String SQL_DELETE_ENTRIES = " DROP TABLE IF EXISTS " + InsertCountryData.TABLE_NAME;
+        db.execSQL(SQL_DELETE_ENTRIES);
+        onCreate(db);
     }
 
 
