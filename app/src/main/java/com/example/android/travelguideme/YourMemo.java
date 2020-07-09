@@ -2,10 +2,13 @@ package com.example.android.travelguideme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -32,11 +35,11 @@ public class YourMemo extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(YourMemo.this, MainActivity.class);
                 startActivity(intent);
-                insertObject.insertData();
+                insertData();
+                finish();
             }
         });
     mDbHelper = new CountryDbHelper(this);
-
         displayDatabaseInfo();
 
     }
@@ -59,5 +62,25 @@ public class YourMemo extends AppCompatActivity {
             // resources and makes it invalid.
             cursor.close();
         }
+    }
+
+    private void insertData(){
+
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        ContentValues values01 = new ContentValues();
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "France");
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "French");
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_POPULATION, 67);
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Euro");
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Paris");
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Marseille");
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_02, "Lyon");
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Strasobourg");
+        values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Bordeaux");
+
+        Long rowId01 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values01);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
     }
 }

@@ -1,7 +1,9 @@
 package com.example.android.travelguideme.data;
 
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.util.Log;
@@ -14,6 +16,8 @@ public class CountryData {
 
     //insert data function
     public void insertData(){
+/*
+        //projection method for show
         String[] projection = {
                 InsertCountryData.COLUMN_COUNTRY_NAME,
                 InsertCountryData.COLUMN_COUNTRY_LANGUAGE,
@@ -26,26 +30,35 @@ public class CountryData {
 
         };
 
-
+        //Cursor
+        Cursor cursor = getContentResolver().query(
+                InsertCountryData.CONTENT_URI,
+                projection,
+                null,
+                null,
+                null
+        );
+        */
 
         //make connection with the SQLite database
          db= mDbHelper.getWritableDatabase();
-
+/*
         ContentValues values = new ContentValues();
-        values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Name 1");
-        values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Language");
-        values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_POPULATION, 55555);
-        values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "type name");
-        values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "capital");
-        values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "more cities");
+        values.put(InsertCountryData.COLUMN_COUNTRY_NAME, "Name 1");
+        values.put(InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Language");
+        values.put(InsertCountryData.COLUMN_COUNTRY_POPULATION, 55555);
+        values.put(InsertCountryData.COLUMN_COUNTRY_CURRENCY, "type name");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CAPITAL, "capital");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CITY_01, "more cities");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CITY_02, "more cities");
+        values.put(InsertCountryData.COLUMN_COUNTRY_CITY_03, "more cities");
 
-        /*
-        Long rowId = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values);
+
+        Long rowId = db.insert(InsertCountryData.TABLE_NAME, null, values);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
-        */
 
          //Uri newUri =
-/*
+*/
         ContentValues values01 = new ContentValues();
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "France");
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "French");
@@ -60,7 +73,7 @@ public class CountryData {
         Long rowId01 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values01);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
 
-
+/*
 
         ContentValues values02 = new ContentValues();
         values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Spain");

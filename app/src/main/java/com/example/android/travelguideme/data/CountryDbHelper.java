@@ -12,7 +12,7 @@ import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 
 public class CountryDbHelper extends SQLiteOpenHelper{
 
-    public static final int DATABASE_VERSION = 3;
+    public static final int DATABASE_VERSION = 4;
     public static final String DATABASE_NAME = "guide.db";
     private CountryDbHelper cDbHelper;
 
@@ -77,18 +77,26 @@ public class CountryDbHelper extends SQLiteOpenHelper{
 
 
     //insert data function
-   /* private void insertDataTest(Context context){
+   private void insertDataTest(Context context){
        SQLiteDatabase db = this.getReadableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put(InsertCountryData.COLUMN_COUNTRY_NAME, "Name 1");
-        values.put(InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Language");
-        values.put(InsertCountryData.COLUMN_COUNTRY_POPULATION, 55555);
-        values.put(InsertCountryData.COLUMN_COUNTRY_CURRENCY, "type name");
-        values.put(InsertCountryData.COLUMN_COUNTRY_CAPITAL, "capital");
-        values.put(InsertCountryData.COLUMN_COUNTRY_CITIES, "more cities");
+       ContentValues values01 = new ContentValues();
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "France");
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "French");
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_POPULATION, 67);
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "Euro");
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "Paris");
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Marseille");
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_02, "Lyon");
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Strasobourg");
+       values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Bordeaux");
 
-        ContentValues values01 = new ContentValues();
+       Long rowId01 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values01);
+       Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
+       /*
+
+       ContentValues values01 = new ContentValues();
         values.put(InsertCountryData.COLUMN_COUNTRY_NAME, "France");
         values.put(InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "French");
         values.put(InsertCountryData.COLUMN_COUNTRY_POPULATION, 67);
@@ -118,9 +126,9 @@ public class CountryDbHelper extends SQLiteOpenHelper{
         //we used null because it is a new row
 
             //Toast.makeText(this, "Error inserting :", Toast.LENGTH_LONG).show();
-
+*/
 
         //connection close
         db.close();
-    }*/
+    }
 }
