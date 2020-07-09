@@ -24,6 +24,7 @@ public class SelectCountry extends AppCompatActivity {
         setContentView(R.layout.activity_select_country);
 
         mDbHelper = new CountryDbHelper(this);
+        displayDatabaseInfo();
     }
 
     //method implementing for display all the countries in this window

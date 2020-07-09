@@ -70,9 +70,14 @@ public class CountryProvider extends ContentProvider {
             case COUNTRY_ID:
                 selection = InsertCountryData.COLUMN_COUNTRY_ID+"=?";
                 selectionArgs = new String[] {String.valueOf(ContentUris.parseId(uri))};
+                cursor = database.query(InsertCountryData.TABLE_NAME,projection,selection,selectionArgs,null,null,sortOrder);
+                break;
+
+            default:
+                throw new IllegalArgumentException("Cannot make the request of :"+ uri);
         }
 
-        return null;
+        return cursor;
     }
 
     @Nullable
