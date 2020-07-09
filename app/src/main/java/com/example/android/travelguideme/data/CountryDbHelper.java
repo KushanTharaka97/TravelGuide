@@ -12,7 +12,7 @@ import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 
 public class CountryDbHelper extends SQLiteOpenHelper{
 
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 3;
     public static final String DATABASE_NAME = "guide.db";
     private CountryDbHelper cDbHelper;
 
@@ -31,6 +31,7 @@ public class CountryDbHelper extends SQLiteOpenHelper{
                     + InsertCountryData.COLUMN_COUNTRY_CURRENCY + " TEXT DEFAULT  Null , "
                     + InsertCountryData.COLUMN_COUNTRY_LANGUAGE + " TEXT DEFAULT Null , "
                     + InsertCountryData.COLUMN_COUNTRY_POPULATION + " INTEGER DEFAULT 0 , "
+                    + InsertCountryData.COLUMN_COUNTRY_FAVOURITE + " INTEGER DEFAULT 0 , "
                     + InsertCountryData.COLUMN_COUNTRY_CAPITAL + " TEXT DEFAULT Null , "
                     + InsertCountryData.COLUMN_COUNTRY_CITY_01 + " TEXT DEFAULT Null , "
                     + InsertCountryData.COLUMN_COUNTRY_CITY_02 + " TEXT DEFAULT Null , "

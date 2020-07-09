@@ -27,6 +27,8 @@ public class CountryContract  {
 
         public static final String COLUMN_COUNTRY_POPULATION = "population";
 
+        public static final String COLUMN_COUNTRY_FAVOURITE = "favourite";
+
         /*
     Lastly, inside each of the Entry classes in the contract,
     we create a full URI for the class as a constant called CONTENT_URI.
