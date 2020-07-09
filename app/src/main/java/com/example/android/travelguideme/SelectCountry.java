@@ -60,6 +60,24 @@ public class SelectCountry extends AppCompatActivity {
             //count of the table rows
             displayView.setText("Number of rows in pets database table: " + cursor.getCount());
 
+            //testing
+            displayView.append("\n"+
+                    InsertCountryData.COLUMN_COUNTRY_NAME+" "
+                    +InsertCountryData.COLUMN_COUNTRY_LANGUAGE+" "
+                    );
+            //figureout the index of each column
+            int nameOfTheCountry = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_NAME);
+            int theLanguageUsing = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_LANGUAGE);
+            while (cursor.moveToNext()){
+                String countryName = cursor.getString(nameOfTheCountry);
+                String countryLanguage = cursor.getString(theLanguageUsing);
+
+                displayView.append("\n"+
+                countryName+" "
+                +countryLanguage);
+            }
+
+
         }catch(Exception e){
             Log.e(LOG_TAG,"Error Occured due to "+ e);
         }finally {
