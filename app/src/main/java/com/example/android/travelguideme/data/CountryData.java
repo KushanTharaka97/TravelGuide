@@ -6,10 +6,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 public class CountryData {
+    //create olect from DBHelper class
     CountryDbHelper mDbHelper;
 
     //insert data function
     private void insertData(){
+
+        //make connection with the SQLite database
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -19,6 +22,9 @@ public class CountryData {
         values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CURRENCY, "type name");
         values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CAPITAL, "capital");
         values.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "more cities");
+
+        Long rowId = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
 
         ContentValues values01 = new ContentValues();
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "France");
@@ -30,6 +36,9 @@ public class CountryData {
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_02, "Lyon");
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Strasobourg");
         values01.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Bordeaux");
+
+        Long rowId01 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values01);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
 
 
 
@@ -44,6 +53,9 @@ public class CountryData {
         values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Granada");
         values02.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Valencia");
 
+        Long rowId02 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values02);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
 
         ContentValues values03 = new ContentValues();
         values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "China");
@@ -55,6 +67,9 @@ public class CountryData {
         values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_02, "Gullin");
         values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Chengdu");
         values03.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Guangzhou");
+
+        Long rowId03 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values03);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
 
 
         ContentValues values04 = new ContentValues();
@@ -68,6 +83,9 @@ public class CountryData {
         values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Milan");
         values04.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Naples");
 
+        Long rowId04 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values04);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
         ContentValues values05 = new ContentValues();
         values05.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Australia");
         values05.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "English ");
@@ -78,6 +96,9 @@ public class CountryData {
         values05.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_02, "Melbourne");
         values05.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Craigieburn");
         values05.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Perth");
+
+        Long rowId05 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values05);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
 
         ContentValues values06 = new ContentValues();
         values06.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Greece");
@@ -90,6 +111,9 @@ public class CountryData {
         values06.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_03, "Rethymno");
         values06.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_04, "Naples");
 
+        Long rowId06 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values06);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
         ContentValues values07 = new ContentValues();
         values07.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "New Zealand");
         values07.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "English ");
@@ -100,6 +124,9 @@ public class CountryData {
         values07.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Melbourne");
         values07.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Craigieburn");
         values07.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Perth ");
+
+        Long rowId07 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values07);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
 
 
         ContentValues values08 = new ContentValues();
@@ -113,6 +140,9 @@ public class CountryData {
         values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Hat Yai");
         values08.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Nakhon Ratchasima");
 
+        Long rowId08 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values08);
+        Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
         ContentValues values09 = new ContentValues();
         values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_NAME, "Japan");
         values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_LANGUAGE, "Hachijo Japanese");
@@ -124,11 +154,10 @@ public class CountryData {
         values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Kasugai");
         values09.put(CountryContract.InsertCountryData.COLUMN_COUNTRY_CITY_01, "Tsushima");
 
-
-
-        //Inserting row
-        Long rowId = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values);
+        Long rowId09 = db.insert(CountryContract.InsertCountryData.TABLE_NAME, null, values09);
         Log.i("CountryDbHelper", "NEW ROW ID :"+ CountryContract.InsertCountryData.COLUMN_COUNTRY_ID);
+
+
         //we used null because it is a new row
 
         //Toast.makeText(this, "Error inserting :", Toast.LENGTH_LONG).show();
