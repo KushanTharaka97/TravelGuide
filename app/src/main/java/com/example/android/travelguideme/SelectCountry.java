@@ -1,7 +1,12 @@
 package com.example.android.travelguideme;
 
+import android.content.ContentUris;
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -36,11 +41,27 @@ public class SelectCountry extends AppCompatActivity implements LoaderManager.Lo
         // displayDatabaseInfo();
 
         //display in List
-        ListView petDisplayList = findViewById(R.id.country_list);
+        ListView countryDisplayList = findViewById(R.id.country_list);
         mCursorAdapter = new CountryCursorAdapter(this, null);
-        petDisplayList.setAdapter(mCursorAdapter);
+        countryDisplayList.setAdapter(mCursorAdapter);
 
 
+        //setup item click listner
+        countryDisplayList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //create new intent to send data to {@link editor activity}
+                Intent intent = new Intent(SelectCountry.this,countryDetails.class);
+
+                //content uri represent the specific pet that were clicked
+                Uri currentCountryUri = ContentUris.withAppendedId(InsertCountryData.CONTENT_URI,id);
+
+                //set the URI to the data field of the intent
+                intent.setData(currentCountryUri);
+
+                startActivity(intent);
+            }
+        });
         //kick off the loader
         //getLoaderManager().initLoader(PET_LOADER,null,this);
         LoaderManager.getInstance(this).initLoader(COUNTRY_LOADER, null, this);
