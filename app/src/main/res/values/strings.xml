@@ -7,6 +7,7 @@
     <string name="fav">Your Favourite</string>
     <string name="memo">Your Memo</string>
     <string name="about">About Us</string>
+    <string name="country_details">Country Details</string>
 
 
     <!--Buttons in the mainXML window-->
@@ -24,4 +25,10 @@
     <string name="about_developers">
         This app was developed by undergraduates in NSBM green university.
     </string>
+
+    <string name="country_name">Country Name :</string>
+    <string name="capital">Capital :</string>
+    <string name="pop">Population(Mil) :</string>
+    <string name="lang">Main Language :</string>
+    <string name="cur">Currency</string>
 </resources>
