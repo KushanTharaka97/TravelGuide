@@ -1,21 +1,16 @@
 package com.example.android.travelguideme;
 
+import android.database.Cursor;
+import android.os.Bundle;
+import android.widget.ListView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
 
-import android.database.Cursor;
-import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.ListView;
-import android.widget.TextView;
-
-import com.example.android.travelguideme.data.CountryContract;
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 import com.example.android.travelguideme.data.CountryDbHelper;
 
@@ -27,7 +22,9 @@ public class SelectCountry extends AppCompatActivity implements LoaderManager.Lo
 
     CountryCursorAdapter mCursorAdapter;
 
-    /** Tag for the log messages */
+    /**
+     * Tag for the log messages
+     */
     public static final String LOG_TAG = SelectCountry.class.getSimpleName();
 
     @Override
@@ -36,10 +33,12 @@ public class SelectCountry extends AppCompatActivity implements LoaderManager.Lo
         setContentView(R.layout.activity_select_country);
 
         mDbHelper = new CountryDbHelper(this);
-       // displayDatabaseInfo();
+        // displayDatabaseInfo();
 
         //display in List
         ListView petDisplayList = findViewById(R.id.country_list);
+        mCursorAdapter = new CountryCursorAdapter(this, null);
+        petDisplayList.setAdapter(mCursorAdapter);
 
 
         //kick off the loader
@@ -120,13 +119,13 @@ public class SelectCountry extends AppCompatActivity implements LoaderManager.Lo
                 InsertCountryData.COLUMN_COUNTRY_NAME,
                 InsertCountryData.COLUMN_COUNTRY_CAPITAL
         };
-        return new CursorLoader(this, InsertCountryData.CONTENT_URI,projection, null, null, null);
+        return new CursorLoader(this, InsertCountryData.CONTENT_URI, projection, null, null, null);
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
 
-            mCursorAdapter.swapCursor(data);
+        mCursorAdapter.swapCursor(data);
     }
 
     @Override
