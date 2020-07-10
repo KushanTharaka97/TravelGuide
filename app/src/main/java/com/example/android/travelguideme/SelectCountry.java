@@ -1,19 +1,29 @@
 package com.example.android.travelguideme;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 import com.example.android.travelguideme.data.CountryDbHelper;
 
-public class SelectCountry extends AppCompatActivity {
+public class SelectCountry extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     private CountryDbHelper mDbHelper;
+
+    //identify a certain loader
+    private static final int COUNTRY_LOADER = 0;
+
+    CountryCursorAdapter mCursorAdapter;
 
     /** Tag for the log messages */
     public static final String LOG_TAG = SelectCountry.class.getSimpleName();
@@ -24,17 +34,27 @@ public class SelectCountry extends AppCompatActivity {
         setContentView(R.layout.activity_select_country);
 
         mDbHelper = new CountryDbHelper(this);
-        displayDatabaseInfo();
+       // displayDatabaseInfo();
+
+        //display in List
+        ListView petDisplayList = findViewById(R.id.country_list);
+
+
+        //kick off the loader
+        //getLoaderManager().initLoader(PET_LOADER,null,this);
+        LoaderManager.getInstance(this).initLoader(COUNTRY_LOADER, null, this);
+
     }
 
     //method implementing for display all the countries in this window
 
+    /*
     private void displayDatabaseInfo(){
         // To access our database, we instantiate our subclass of SQLiteOpenHelper
         // and pass the context, which is the current activity.
 
         //display in this space
-        TextView displayView = findViewById(R.id.text_view_country);
+        //TextView displayView = findViewById(R.id.text_view_country);
 
         //using Uri method to call the database
         String[] projection = {
@@ -84,6 +104,24 @@ public class SelectCountry extends AppCompatActivity {
             cursor.close();
         }
 
+
+    }
+
+     */
+
+    @NonNull
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
+
+    }
+
+    @Override
+    public void onLoaderReset(@NonNull Loader<Cursor> loader) {
 
     }
 }
