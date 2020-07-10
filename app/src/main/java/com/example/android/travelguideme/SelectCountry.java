@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
 
 import android.database.Cursor;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.android.travelguideme.data.CountryContract;
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 import com.example.android.travelguideme.data.CountryDbHelper;
 
@@ -112,16 +114,24 @@ public class SelectCountry extends AppCompatActivity implements LoaderManager.Lo
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
-        return null;
+        //projection defined
+        String[] projection = {
+                InsertCountryData._ID,
+                InsertCountryData.COLUMN_COUNTRY_NAME,
+                InsertCountryData.COLUMN_COUNTRY_CAPITAL
+        };
+        return new CursorLoader(this, InsertCountryData.CONTENT_URI,projection, null, null, null);
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
 
+            mCursorAdapter.swapCursor(data);
     }
 
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
 
+        mCursorAdapter.swapCursor(null);
     }
 }
