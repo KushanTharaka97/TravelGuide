@@ -62,8 +62,8 @@ public class SelectCountry extends AppCompatActivity {
 
             //testing
             displayView.append("\n"+
-                    InsertCountryData.COLUMN_COUNTRY_NAME+" "
-                    +InsertCountryData.COLUMN_COUNTRY_LANGUAGE+" "
+                    InsertCountryData.COLUMN_COUNTRY_NAME+"   "
+                    +InsertCountryData.COLUMN_COUNTRY_LANGUAGE+"   "
                     );
             //figureout the index of each column
             int nameOfTheCountry = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_NAME);
@@ -73,7 +73,7 @@ public class SelectCountry extends AppCompatActivity {
                 String countryLanguage = cursor.getString(theLanguageUsing);
 
                 displayView.append("\n"+
-                countryName+" "
+                countryName+"   "
                 +countryLanguage);
             }
 
