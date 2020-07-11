@@ -120,31 +120,31 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:paddingTop="@dimen/display_space">
+        android:paddingTop="@dimen/display_space"
+        android:textAlignment="center">
 
         <TextView
+            style="@style/category_about_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/city"
-            style="@style/category_about_us" />
+            android:text="@string/city" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pop"
+            android:id="@+id/city_1_view"
             style="@style/category_about_us_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:id="@+id/city_1_view"/>
+            android:text="@string/pop" />
 
         <TextView
+            android:id="@+id/city_2_view"
+            style="@style/category_about_us_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pop"
-            style="@style/category_about_us_details"
             android:layout_alignParentRight="true"
             android:paddingTop="@dimen/double_display_space"
-            android:id="@+id/city_2_view"/>
+            android:text="@string/pop" />
 
         <TextView
             android:id="@+id/city_3_view"
