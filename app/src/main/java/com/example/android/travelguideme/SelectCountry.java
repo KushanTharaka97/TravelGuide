@@ -51,7 +51,7 @@ public class SelectCountry extends AppCompatActivity implements LoaderManager.Lo
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //create new intent to send data to {@link editor activity}
-                Intent intent = new Intent(SelectCountry.this,countryDetails.class);
+                Intent intent = new Intent(SelectCountry.this, CountryDetails.class);
 
                 //content uri represent the specific pet that were clicked
                 Uri currentCountryUri = ContentUris.withAppendedId(InsertCountryData.CONTENT_URI,id);

@@ -12,16 +12,15 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
 import com.example.android.travelguideme.data.CountryDbHelper;
 
 
-public class countryDetails extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class CountryDetails extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    public static final String LOG_TAG = countryDetails.class.getSimpleName();
+    public static final String LOG_TAG = CountryDetails.class.getSimpleName();
 
     //identify a certain loader
     private static final int COUNTRY_LOADER = 0;
@@ -50,6 +49,7 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
 
         //have to use getIntent and getData the associated uri
         Intent intent = getIntent();
+        mCurrentCountryUri = intent.getData();
 
         if(mCurrentCountryUri == null){
             setTitle(getString(R.string.data_not_available));

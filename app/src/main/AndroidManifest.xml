@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".countryDetails"
+            android:name=".CountryDetails"
            />
         <activity
             android:name=".AboutUs"
