@@ -164,5 +164,12 @@
 
     </RelativeLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="297dp"
+        android:src="@drawable/countrydetail"
+        android:layout_margin="8dp"/>
+
+
 
 </LinearLayout>
