@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
 
 import android.content.Intent;
@@ -82,7 +83,15 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
                 InsertCountryData.COLUMN_COUNTRY_CITY_02,
                 InsertCountryData.COLUMN_COUNTRY_CITY_03
         };
-        return null;
+
+        return new CursorLoader(
+                this,
+                mCurrentCountryUri,
+                projection,
+                null,
+                null,
+                null
+        );
     }
 
     @Override
