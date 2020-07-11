@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".countryDetails"
-            android:label="@string/country_details"/>
+           />
         <activity
             android:name=".AboutUs"
             android:label="@string/about" />

@@ -32,4 +32,8 @@
     <string name="lang">Main Language :</string>
     <string name="cur">Currency</string>
     <string name="city">Cities :</string>
+
+    <string name="data_not_available">Data not available...</string>
+    <string name="data_available">The details about the country</string>
+
 </resources>
