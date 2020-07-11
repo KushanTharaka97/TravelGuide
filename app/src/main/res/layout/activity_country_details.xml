@@ -80,7 +80,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/capital"
+            android:text="@string/cur"
+            style="@style/category_about_us" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop"
+
+            android:hint="@string/capital"
+            style="@style/category_about_us_details"
+            android:layout_alignParentRight="true"
+            android:id="@+id/currency_view"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:paddingTop="@dimen/display_space">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lang"
             style="@style/category_about_us" />
 
         <TextView
@@ -89,8 +113,58 @@
             android:text="@string/pop"
             style="@style/category_about_us_details"
             android:layout_alignParentRight="true"
-            android:id="@+id/capital_view"/>
+            android:id="@+id/language_view"/>
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:paddingTop="@dimen/display_space">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/city"
+            style="@style/category_about_us" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop"
+            style="@style/category_about_us_details"
+            android:layout_alignParentRight="true"
+            android:id="@+id/city_1_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop"
+            style="@style/category_about_us_details"
+            android:layout_alignParentRight="true"
+            android:paddingTop="@dimen/double_display_space"
+            android:id="@+id/city_2_view"/>
+
+        <TextView
+            android:id="@+id/city_3_view"
+            style="@style/category_about_us_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingTop="@dimen/double_display_space"
+            android:text="@string/pop" />
+
+        <TextView
+            android:id="@+id/city_4_view"
+            style="@style/category_about_us_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingTop="@dimen/double_display_space"
+            android:text="@string/pop" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>

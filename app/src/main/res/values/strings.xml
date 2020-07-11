@@ -31,4 +31,5 @@
     <string name="pop">Population(Mil) :</string>
     <string name="lang">Main Language :</string>
     <string name="cur">Currency</string>
+    <string name="city">Cities :</string>
 </resources>

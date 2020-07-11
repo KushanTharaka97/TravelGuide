@@ -4,5 +4,6 @@
     <dimen name="activity_horizontal_margin">64dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="display_space">16dp</dimen>
+    <dimen name="double_display_space">32dp</dimen>
 
 </resources>
