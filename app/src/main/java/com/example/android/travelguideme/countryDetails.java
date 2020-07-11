@@ -41,7 +41,19 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
             setTitle(getString(R.string.data_not_available));
         }else{
             setTitle(getString(R.string.data_available));
+            // Initialize a loader to read the pet data from the database
+            // and display the current values in the editor
+            LoaderManager.getInstance(this).initLoader(COUNTRY_LOADER, null, this);
         }
+
+        // Find all relevant views that we will need to read user input from
+        countryName = findViewById(R.id.country_name);
+        countryPopulation = findViewById(R.id.population_view);
+        countryCapital = findViewById(R.id.capital_view);
+        countryCurrency = findViewById(R.id.currency_view);
+        country_CITY_01 = findViewById(R.id.city_1_view);
+        country_CITY_02 = findViewById(R.id.city_2_view);
+        country_CITY_03 = findViewById(R.id.city_3_view);
 
     }
 
