@@ -12,6 +12,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
+import com.example.android.travelguideme.data.CountryDbHelper;
+
 
 public class countryDetails extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -19,6 +22,10 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
     private static final int COUNTRY_LOADER = 0;
 
     private Uri mCurrentCountryUri;
+
+    CountryCursorAdapter mCursorAdapter;
+
+    private CountryDbHelper mDbHelper;
 
     private TextView countryName;
     private TextView countryPopulation;
@@ -55,11 +62,26 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
         country_CITY_02 = findViewById(R.id.city_2_view);
         country_CITY_03 = findViewById(R.id.city_3_view);
 
+        mDbHelper = new CountryDbHelper(this);
+
+
     }
 
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
+        //projection defined
+        String[] projection = {
+                InsertCountryData._ID,
+                InsertCountryData.COLUMN_COUNTRY_NAME,
+                InsertCountryData.COLUMN_COUNTRY_CAPITAL,
+                InsertCountryData.COLUMN_COUNTRY_LANGUAGE,
+                InsertCountryData.COLUMN_COUNTRY_CURRENCY,
+                InsertCountryData.COLUMN_COUNTRY_POPULATION,
+                InsertCountryData.COLUMN_COUNTRY_CITY_01,
+                InsertCountryData.COLUMN_COUNTRY_CITY_02,
+                InsertCountryData.COLUMN_COUNTRY_CITY_03
+        };
         return null;
     }
 
