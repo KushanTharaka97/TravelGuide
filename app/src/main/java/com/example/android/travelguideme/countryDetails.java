@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.android.travelguideme.data.CountryContract.InsertCountryData;
@@ -18,6 +20,8 @@ import com.example.android.travelguideme.data.CountryDbHelper;
 
 
 public class countryDetails extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+
+    public static final String LOG_TAG = countryDetails.class.getSimpleName();
 
     //identify a certain loader
     private static final int COUNTRY_LOADER = 0;
@@ -49,6 +53,7 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
 
         if(mCurrentCountryUri == null){
             setTitle(getString(R.string.data_not_available));
+            Log.e(LOG_TAG,"Doesn't pass uri");
         }else{
             setTitle(getString(R.string.data_available));
             // Initialize a loader to read the pet data from the database
@@ -124,7 +129,7 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
             String CountryCity03 = cursor.getString(city03_ColumnIndex);
 
             countryName.setText(CountryName);
-            countryPopulation.setText(CountryPopulation);
+            countryPopulation.setText(Integer.toString(CountryPopulation));
             countryCapital.setText(CountryCapital);
             countryLanguage.setText(CountryLanguage);
             countryCurrency.setText(CountryCurrency);

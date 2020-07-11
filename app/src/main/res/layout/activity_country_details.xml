@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pop"
+
             style="@style/category_about_us_details"
             android:layout_alignParentRight="true"
             android:id="@+id/population_view"/>
@@ -64,7 +64,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pop"
+
             style="@style/category_about_us_details"
             android:layout_alignParentRight="true"
             android:id="@+id/capital_view"/>
@@ -86,7 +86,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pop"
+
 
             android:hint="@string/capital"
             style="@style/category_about_us_details"
@@ -110,7 +110,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pop"
+
             style="@style/category_about_us_details"
             android:layout_alignParentRight="true"
             android:id="@+id/language_view"/>
@@ -135,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="@string/pop" />
+             />
 
         <TextView
             android:id="@+id/city_2_view"
@@ -144,7 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:paddingTop="@dimen/double_display_space"
-            android:text="@string/pop" />
+           />
 
         <TextView
             android:id="@+id/city_3_view"
@@ -153,7 +153,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:paddingTop="@dimen/double_display_space"
-            android:text="@string/pop" />
+            />
 
         <TextView
             android:id="@+id/city_4_view"
@@ -162,7 +162,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:paddingTop="@dimen/double_display_space"
-            android:text="@string/pop" />
+            />
 
     </RelativeLayout>
 
