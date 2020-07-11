@@ -31,10 +31,12 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
     private TextView countryName;
     private TextView countryPopulation;
     private TextView countryCapital;
+    private TextView countryLanguage;
     private TextView countryCurrency;
     private TextView country_CITY_01;
     private TextView country_CITY_02;
     private TextView country_CITY_03;
+
 
 
     @Override
@@ -58,6 +60,7 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
         countryName = findViewById(R.id.country_name);
         countryPopulation = findViewById(R.id.population_view);
         countryCapital = findViewById(R.id.capital_view);
+        countryLanguage = findViewById(R.id.language_view);
         countryCurrency = findViewById(R.id.currency_view);
         country_CITY_01 = findViewById(R.id.city_1_view);
         country_CITY_02 = findViewById(R.id.city_2_view);
@@ -95,12 +98,55 @@ public class countryDetails extends AppCompatActivity implements LoaderManager.L
     }
 
     @Override
-    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
+    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor cursor) {
+        if(cursor == null){
+            return;
+        }
+
+        if(cursor.moveToNext()){
+            int nameColumnIndex = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_NAME);
+            int capitalColumnIndex = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_CAPITAL);
+            int languageColumnIndex = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_LANGUAGE);
+            int currencyColumnIndex = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_CURRENCY);
+            int populationColumnIndex = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_POPULATION);
+            int city01_ColumnIndex = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_CITY_01);
+            int city02_ColumnIndex = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_CITY_02);
+            int city03_ColumnIndex = cursor.getColumnIndex(InsertCountryData.COLUMN_COUNTRY_CITY_03);
+
+            // Extract out the value from the Cursor for the given column index
+            String CountryName = cursor.getString(nameColumnIndex);
+            String CountryCapital = cursor.getString(capitalColumnIndex);
+            String CountryLanguage = cursor.getString(languageColumnIndex);
+            String CountryCurrency = cursor.getString(currencyColumnIndex);
+            int CountryPopulation = cursor.getInt(populationColumnIndex);
+            String CountryCity01 = cursor.getString(city01_ColumnIndex);
+            String CountryCity02 = cursor.getString(city02_ColumnIndex);
+            String CountryCity03 = cursor.getString(city03_ColumnIndex);
+
+            countryName.setText(CountryName);
+            countryPopulation.setText(CountryPopulation);
+            countryCapital.setText(CountryCapital);
+            countryLanguage.setText(CountryLanguage);
+            countryCurrency.setText(CountryCurrency);
+            country_CITY_01.setText(CountryCity01);
+            country_CITY_02.setText(CountryCity02);
+            country_CITY_03.setText(CountryCity03);
+
+
+        }
 
     }
 
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
 
+        countryName.setText("");
+        countryPopulation.setText("");
+        countryLanguage.setText("");
+        countryCurrency.setText("");
+        countryCapital.setText("");
+        country_CITY_01.setText("");
+        country_CITY_02.setText("");
+        country_CITY_03.setText("");
     }
 }
